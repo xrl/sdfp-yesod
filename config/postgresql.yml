@@ -1,0 +1,24 @@
+Default: &defaults
+  user: sdfp
+  password: haskell
+  host: localhost
+  port: 5432
+  database: sdfp
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: haskell_test
+  <<: *defaults
+
+Staging:
+  database: haskell_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: haskell_production
+  poolsize: 100
+  <<: *defaults
